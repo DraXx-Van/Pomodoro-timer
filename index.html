@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOCOSPOINT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="dot-canvas"></canvas>
+    <div class="top-level">
+        <div class="nav">
+            <div class="logo-container">
+                <div class="dot">
+                </div>
+                <div class="logo">FOCOSPOINT</div>
+            </div>
+            <div class="nav-btns">
+                <button class="navbtns active" id="bfocus">Focus</button>
+                <button class="navbtns" id="blongbreak">Long Break</button>
+                <button class="navbtns" id="bsmallbreak">Short Break</button>
+            </div>
+        </div>
+        <div class="main">
+            <div class="pomodoro-area">
+                <div>
+                    <span class="dull" id="modesub">FOCUS SESSION</span>
+                    <div class="bold" id="mode">FOCUS.</div>
+                </div>
+                <div class="ring-timer">
+                    <svg width="260" height="260" viewBox="0 0 260 260">
+                        <circle cx="130" cy="130" r="120"
+                            fill="none"
+                            stroke="#1f211f"
+                            stroke-width="2"
+                            id="back-ring"
+                        />
+                        <circle cx="130" cy="130" r="120"
+                            fill="none"
+                            stroke="var(--accent)"
+                            stroke-width="2"
+                            stroke-dasharray="754"
+                            stroke-dashoffset="00"
+                            id="ring"
+                        />       
+                    </svg>
+                    <div class="ring-inner">
+                        <div class="timer-txt bold" id="timerValue">25:00</div>
+                        <span class="timer-subs dull">ready</span>
+                    </div>
+                </div>
+                <div class="dots">
+                    <div class="green-dot"></div>
+                    <div class="greydot"></div>
+                    <div class="greydot"></div>
+                    <div class="greydot"></div>
+                    <span class="dull">SESSION 1 OF 4</span>
+                </div>
+                <div class="pomodoro-btns">
+                    <button class="btn-primary btn" id="bstart">▶ Start</button>
+                    <button class=" btn" id="bpause">⏸ Pause</button>
+                    <button class="btn-ghost btn" id="breset">↺ Reset</button>
+                    <button class="btn-dashed btn" id="baddtime">+10 sec</button>
+                </div>
+            </div>
+            <div class="tasks-div">
+                <div class="heading">
+                    <div class="title bold">TASKS</div>
+                    <div>
+                        <span id="finishC">0</span>
+                        <span id="totalC">/ 3</span>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <input type="text" placeholder="What are you working on?" class="task-input" name="taskName">
+                    <button class="inp-plus-btn" id="add-btn">+</button>
+                </div>
+                
+                <div class="select" id="task-filters">
+                    <button class="filter-btn navbtns active" data-filter="all">ALL</button>
+                    <button class="filter-btn navbtns" data-filter="active">Active</button>
+                    <button class="filter-btn navbtns" data-filter="done">Done</button>
+                </div>
+
+                <div class="tasks-ls">
+                </div>
+
+                <div class="stats-area">
+                    <div class="boxes">
+                        <b id="sesssionC" class="stats-count">0</b>
+                        <small class="dull">SESSION</small>
+                    </div>
+                    <div class="boxes">
+                        <b id="minF" class="stats-count">0</b>
+                        <small class="dull">MINS</small>
+                    </div>
+                    <div class="boxes">
+                        <b id="tasks-count" class="stats-count">0</b>
+                        <small class="dull">TASKS DONE</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="status-baar">
+
+        </div>
+        
+    </div>
+    <script src="script.js"></script>    
+</body>
+</html>
